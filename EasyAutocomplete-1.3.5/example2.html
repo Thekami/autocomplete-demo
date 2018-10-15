@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Autocomplete Example</title>
+
+	<link rel="stylesheet" href="easy-autocomplete.min.css">
+</head>
+<body>
+	
+
+	<input id="inputOne" placeholder="X-men algo" />
+<input id="inputTwo" placeholder="Real name" />
+
+
+	<script src="../jQuery/jquery-2.2.3.min.js"></script>
+	<script src="jquery.easy-autocomplete.min.js"></script>
+
+	<script>
+		
+		var options = {
+
+		    url: "json.json",
+
+		    getValue: function(element) {
+		        return element.algo;
+		    },
+
+		    list: {
+		        onSelectItemEvent: function() {
+		        console.log($("#inputOne").getSelectedItemData())
+		            var selectedItemValue = $("#inputOne").getSelectedItemData().code;
+
+		            $("#inputTwo").val(selectedItemValue);
+		        }
+		    }
+		};
+
+		$("#inputOne").easyAutocomplete(options);
+
+	</script>
+	
+</body>
+</html>

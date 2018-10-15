@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Autocomplete Example</title>
+
+	<link rel="stylesheet" href="easy-autocomplete.min.css">
+</head>
+<body>
+	
+
+	<input id="countries"/>
+
+
+	<script src="../jQuery/jquery-2.2.3.min.js"></script>
+	<script src="jquery.easy-autocomplete.min.js"></script>
+
+	<script>
+		
+		var options = {
+
+		  url: "json.json",
+
+		  getValue: "algo",
+
+		  list: {	
+		    match: {
+		      enabled: true
+		    }
+		  },
+
+		  theme: "square"
+		};
+
+		$("#countries").easyAutocomplete(options);
+
+	</script>
+	
+</body>
+</html>
